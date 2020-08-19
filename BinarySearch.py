@@ -17,8 +17,9 @@ Input: 8
 Output: 2
 Explanation: The square root of 8 is 2.82842..., and since 
              the decimal part is truncated, 2 is returned.
-             
+
 """
+# Binary Search 
 
 class Solution:
     """
@@ -26,7 +27,8 @@ class Solution:
     [0, x]
     
     """
-    def mySqrt(self, x: int) -> int:
+
+  def mySqrt(self, x: int) -> int:
         min, max = 0, x
         res = 0
         while min <= max:
@@ -40,3 +42,19 @@ class Solution:
                 min = mid + 1
                 res = mid
         return res
+
+print(mySqrt)
+  
+
+# Brute Force
+
+# class Solution:
+#     def mySqrt(self, x: int) -> int:
+#         for i in range(0, x + 1):
+#             squared = i * i
+#             if squared == x:
+#                 return i
+#             elif squared > x:
+#                 return i -1
+#         return -1
+ 
